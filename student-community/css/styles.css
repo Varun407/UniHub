@@ -6,12 +6,9 @@
 }
 
 body {
-  /* Standard system fonts look clean, professional, and not "AI-generated" */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background-color: #f9fafb;
-  /* Very light cool gray */
   color: #1f2937;
-  /* Dark charcoal instead of stark black */
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -19,13 +16,11 @@ body {
 a {
   text-decoration: none;
   color: #2563eb;
-  /* Nice royal blue */
   transition: color 0.15s ease;
 }
 
 a:hover {
   color: #1d4ed8;
-  /* Darker blue on hover */
   text-decoration: underline;
 }
 
@@ -47,17 +42,24 @@ header {
 }
 
 header .logo {
-  font-size: 20px;
-  font-weight: 700;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
 }
 
 header .logo a {
-  color: #111827 !important;
+  color: #1a1a1a !important;
+  text-decoration: none;
+  transition: color 0.4s ease, opacity 0.4s ease;
 }
 
 header .logo a:hover {
   text-decoration: none !important;
-  color: #2563eb !important;
+  color: #6b7280 !important;
 }
 
 nav {
@@ -169,13 +171,11 @@ nav {
   border-radius: 8px;
   padding: 24px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  /* Very subtle, natural shadow */
   transition: border-color 0.2s ease;
 }
 
 .card:hover {
   border-color: #d1d5db;
-  /* Slight interaction feedback, not a bouncy hover effect */
 }
 
 .card h3 {
@@ -283,7 +283,6 @@ nav {
   font-size: 12px;
   font-weight: 500;
   border-radius: 4px;
-  /* More standard pill shape rather than overly rounded */
   margin: 0 4px 8px 0;
   border: 1px solid #e5e7eb;
 }
@@ -297,7 +296,6 @@ nav {
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  /* Slightly more prominent shadow for focal areas like login */
 }
 
 .form-container h2 {
@@ -333,7 +331,6 @@ nav {
   outline: none;
   border-color: #2563eb;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-  /* Standard focus ring */
 }
 
 /* Footer */
