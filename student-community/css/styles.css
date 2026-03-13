@@ -26,7 +26,8 @@ a:hover {
 
 /* Layout */
 .container {
-  width: 1050px;
+  width: 90%;
+  max-width: 1050px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -73,6 +74,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -161,7 +163,7 @@ nav {
 /* Cards & Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
 }
 
