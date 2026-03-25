@@ -21,7 +21,15 @@
                 <li><a href="study-groups.html">Study Groups</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="events.html" class="active">Events</a></li>
-                <li><a href="login.html" class="btn-login">Login / Register</a></li>
+                <li id="auth-nav-item" style="position: relative;">
+                    <a href="login.html" class="btn-login" id="login-btn">Login / Register</a>
+                    <div id="user-menu" style="display: none; align-items: center; justify-content: center;">
+                        <span id="hamburger-btn" style="cursor: pointer; font-size: 24px; padding: 0 10px; color: #4b5563;">&#9776;</span>
+                        <div id="logout-dropdown" style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #e5e7eb; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 10px; min-width: 120px; z-index: 1000;">
+                            <a href="#" id="logout-btn" style="color: #ef4444; padding: 8px 12px; display: block; text-align: center; font-weight: 500;">Log Out</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     </header>
@@ -79,5 +87,41 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const loginBtn = document.getElementById('login-btn');
+            const userMenu = document.getElementById('user-menu');
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const logoutDropdown = document.getElementById('logout-dropdown');
+            const logoutBtn = document.getElementById('logout-btn');
+
+            if (isLoggedIn === 'true') {
+                if (loginBtn) loginBtn.style.display = 'none';
+                if (userMenu) userMenu.style.display = 'flex';
+            }
+
+            if (hamburgerBtn) {
+                hamburgerBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    logoutDropdown.style.display = logoutDropdown.style.display === 'none' ? 'block' : 'none';
+                });
+            }
+
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    localStorage.removeItem('isLoggedIn');
+                    window.location.reload();
+                });
+            }
+
+            document.addEventListener('click', function(e) {
+                if (logoutDropdown && logoutDropdown.style.display === 'block' && !userMenu.contains(e.target)) {
+                    logoutDropdown.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
